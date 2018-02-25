@@ -16,7 +16,7 @@
 #'   \item \code{D}: double-centering which leads to a biased estimator.
 #' }
 #'
-#' @return \code{mdd} returns the value of squared martingale difference divergence.
+#' @return \code{mdd} returns the squared martingale difference divergence of \code{Y} given \code{X}.
 #'
 #' @references Shao, X., and Zhang, J. (2014).
 #'   Martingale difference correlation and its use in high-dimensional variable screening.
@@ -71,8 +71,8 @@ mdd <- function(X, Y, compute = "C", center = "U") {
                 Q = as.integer(q),
                 X = as.double(X),
                 Y = as.double(Y),
-                O = as.double(numeric(1)),
-                PACKAGE = "EDMeasure")$O
+                V = as.double(numeric(1)),
+                PACKAGE = "EDMeasure")$V
     } else if (center == "D") {
       mdd <- .C("MDD_DCenter",
                 N = as.integer(n),
@@ -80,8 +80,8 @@ mdd <- function(X, Y, compute = "C", center = "U") {
                 Q = as.integer(q),
                 X = as.double(X),
                 Y = as.double(Y),
-                O = as.double(numeric(1)),
-                PACKAGE = "EDMeasure")$O
+                V = as.double(numeric(1)),
+                PACKAGE = "EDMeasure")$V
     } else {
       stop("Invalid center. Read ?mdd for proper syntax.")
     }

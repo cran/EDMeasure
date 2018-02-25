@@ -1,6 +1,8 @@
 # EDMeasure
 
 [![Travis-CI Build Status](https://travis-ci.org/zejin/EDMeasure.svg?branch=master)](https://travis-ci.org/zejin/EDMeasure.svg?branch=master)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/EDMeasure)](https://CRAN.R-project.org/package=EDMeasure)
+[![](https://cranlogs.r-pkg.org/badges/EDMeasure)](https://CRAN.R-project.org/package=EDMeasure)
 
 ## Overview
 
@@ -64,7 +66,8 @@ The conditional mean dependence measures include:
 - conditional mean dependence of Y given X
   - martingale difference divergence
   - martingale difference correlation
-- conditional mean dependence of Y given X conditioning on Z
+  - martingale difference divergence matrix
+- conditional mean dependence of Y given X adjusting for the dependence on Z
   - partial martingale difference divergence
   - partial martingale difference correlation
 
